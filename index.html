@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nama Toko Anda - Produk Berkualitas</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --text-color: #1f2937;
+            --bg-color: #f9fafb;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e3a8a;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: #4b5563;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        .cta-btn {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .cta-btn:hover {
+            background-color: #1d4ed8;
+        }
+        .products {
+            padding: 4rem 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* UPDATE CSS: Pengaturan agar foto pas, rapi, dan tidak gepeng */
+        .card-img {
+            width: 100%;
+            height: 220px;       /* Tinggi area foto */
+            object-fit: cover;   /* Memotong gambar secara proporsional jika beda rasio */
+            object-position: center; /* Memastikan fokus gambar di tengah */
+            background-color: #e5e7eb;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .card-title {
+            font-size: 1.25rem;
+            margin: 0 0 0.5rem 0;
+        }
+        .card-price {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .card-text {
+            color: #4b5563;
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        .about {
+            background-color: white;
+            padding: 4rem 0;
+        }
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .contact {
+            padding: 4rem 0;
+            background-color: #f3f4f6;
+        }
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .contact-item {
+            margin-bottom: 1rem;
+        }
+        .contact-item strong {
+            display: inline-block;
+            width: 120px;
+        }
+        footer {
+            background-color: #1f2937;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">C'Betta</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Koleksi Produk Terbaik untuk Anda</h1>
+            <p>Temukan berbagai pilihan produk berkualitas tinggi yang dikurasi khusus untuk Anda.</p>
+            <a href="#produk" class="cta-btn">Lihat Produk</a>
+        </div>
+    </section>
+
+    <section id="produk" class="products">
+        <div class="container">
+            <h2 class="section-title">Produk Kami</h2>
+            <div class="grid">
+                <!-- Produk 1 -->
+                <div class="card">
+                    <!-- GANTI DI SINI: Masukkan nama file foto Anda di src="..." -->
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGTMJa_BcQFnM6GXNOahsEynTDY1_qpsoxsGB3l4F7tX1jC0P-t1WVEdE&s=10" alt="Pair FCCP Red Line Vietnam" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Pair FCCP Red Line Vietnam</h3>
+                        <div class="card-price">Rp 300.000</div>
+                        <p class="card-text">Paling populer dan best seller dengan kualitas super VVIP (Line original Vietnam) auto cuan di anakan nya.</p>
+                        <a href="#kontak" class="cta-btn" style="text-align: center;">Beli Sekarang</a>
+                    </div>
+                </div>
+                <!-- Produk 2 -->
+                <div class="card">
+                    <!-- GANTI DI SINI: Masukkan nama file foto Anda di src="..." -->
+                    <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rcbw-lsmx6ibcdqvpcf" alt="Pair Red Koi Cooper Line Indonesia" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Pair Red Koi Cooper Line Indonesia</h3>
+                        <div class="card-price">Rp 200.000</div>
+                        <p class="card-text">Female full egg, Male sangat sobu (Line Indonesia) bukan random tapi ini settingan dengan kualitas grade A</p>
+                        <a href="#kontak" class="cta-btn" style="text-align: center;">Beli Sekarang</a>
+                    </div>
+                </div>
+                <!-- Produk 3 -->
+                <div class="card">
+                    <!-- GANTI DI SINI: Masukkan nama file foto Anda di src="..." -->
+                    <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/e64296dfffa94b2188d79030bc5a8bf6~tplv-aphluv4xwc-resize-jpeg:700:0.jpeg" alt="Pair Avatar Cooper Line Indonesia" class="card-img">
+                    <div class="card-body">
+                        <h3 class="card-title">Pair Avatar Cooper Line Indonesia</h3>
+                        <div class="card-price">Rp 200.000</div>
+                        <p class="card-text">Cocok dijadikan indukan, umur 5 bulan dengan size reguler (Line Indonesia) dengan kualitas grade A.</p>
+                        <a href="#kontak" class="cta-btn" style="text-align: center;">Beli Sekarang</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Tentang Kami</h2>
+                <p>Kami adalah toko online terpercaya yang berfokus pada penyediaan produk-produk berkualitas terbaik. Berawal dari penjualan via media sosial, kini kami hadir dengan platform yang lebih profesional untuk memberikan pengalaman belanja yang aman, cepat, dan terpercaya bagi seluruh pelanggan di Indonesia.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="contact">
+        <div class="container">
+            <h2 class="section-title">Hubungi Kami</h2>
+            <div class="contact-info">
+                <div class="contact-item"><strong>Nama Toko:</strong> C'Betta</div>
+                <div class="contact-item"><strong>Email:</strong> admin@cbetta.my.id</div>
+                <div class="contact-item"><strong>WhatsApp:</strong> 0838-9013-6499</div>
+                <div class="contact-item"><strong>Alamat Toko:</strong> Jl. Oma Anggawisastra, Lampegan, Ibun, Kab. Bandung, Indonesia</div>
+                <div class="contact-item"><strong>Media Sosial:</strong> @c.betta.id (Instagram)</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            &copy; 2026 C'Betta. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
