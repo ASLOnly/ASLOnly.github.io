@@ -3,12 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpeg" href="cbetta-logo.jpg">
     <title>C'Betta - Produk Berkualitas</title>
     <style>
         :root {
-            --primary-color: #2563eb;
-            --text-color: #1f2937;
-            --bg-color: #f9fafb;
+            --primary-color: #D4A72C;
+            --primary-dark: #9A7112;
+            --gold-light: #F7D77A;
+            --gold: #D4A72C;
+            --gold-dark: #9A7112;
+            --text-color: #F5E6B8;
+            --muted-text: #C9B98A;
+            --bg-color: #080808;
+            --surface-color: #111111;
+            --border-color: rgba(212, 167, 44, 0.35);
+            
+            
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -19,8 +29,8 @@
             padding: 0;
         }
         header {
-            background-color: #ffffff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            background: rgba(8, 8, 8, 0.96);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.45), inset 0 0 0 1px var(--border-color);
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
@@ -39,36 +49,36 @@
         .logo {
             font-size: 1.5rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--gold-light);
         }
         .hero {
             padding: 4rem 0;
             text-align: center;
-            background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+            background: radial-gradient(circle at 50% 20%, rgba(212,167,44,0.16), transparent 42%), linear-gradient(135deg, #050505 0%, #17120A 55%, #050505 100%);
         }
         .hero h1 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #1e3a8a;
+            color: var(--gold-light);
         }
         .hero p {
             font-size: 1.25rem;
-            color: #4b5563;
+            color: var(--muted-text);
             max-width: 600px;
             margin: 0 auto 2rem;
         }
         .cta-btn {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--gold-light);
+            color: #090909;
             padding: 0.75rem 1.5rem;
-            border-radius: 0.375rem;
+            border-radius: 999px;
             text-decoration: none;
             font-weight: 600;
             display: inline-block;
             transition: background-color 0.2s;
         }
         .cta-btn:hover {
-            background-color: #1d4ed8;
+            background: linear-gradient(135deg, #E7BF55, var(--gold-dark));
         }
         .products {
             padding: 4rem 0;
@@ -84,9 +94,9 @@
             gap: 2rem;
         }
         .card {
-            background: white;
+            background: linear-gradient(145deg, #151515, #0B0B0B);
             border-radius: 0.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.45), inset 0 0 0 1px var(--border-color);
             overflow: hidden;
             display: flex;
             flex-direction: column;
@@ -98,7 +108,7 @@
             height: 220px;       /* Tinggi area foto */
             object-fit: cover;   /* Memotong gambar secara proporsional jika beda rasio */
             object-position: center; /* Memastikan fokus gambar di tengah */
-            background-color: #e5e7eb;
+            background-color: #0B0B0B;
         }
         
         .card-body {
@@ -114,17 +124,17 @@
         .card-price {
             font-size: 1.125rem;
             font-weight: 700;
-            color: var(--primary-color);
+            color: var(--gold-light);
             margin-bottom: 1rem;
         }
         .card-text {
-            color: #4b5563;
+            color: var(--muted-text);
             font-size: 0.875rem;
             margin-bottom: 1.5rem;
             flex-grow: 1;
         }
         .about {
-            background-color: white;
+            background-color: #090909;
             padding: 4rem 0;
         }
         .about-content {
@@ -134,15 +144,15 @@
         }
         .contact {
             padding: 4rem 0;
-            background-color: #f3f4f6;
+            background: radial-gradient(circle at 50% 0%, rgba(212,167,44,0.08), transparent 35%), #080808;
         }
         .contact-info {
             max-width: 600px;
             margin: 0 auto;
-            background: white;
+            background: linear-gradient(145deg, #151515, #0B0B0B);
             padding: 2rem;
             border-radius: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.45), inset 0 0 0 1px var(--border-color);
         }
         .contact-item {
             margin-bottom: 1rem;
@@ -152,19 +162,79 @@
             width: 120px;
         }
         footer {
-            background-color: #1f2937;
-            color: white;
+            background: #050505; border-top: 1px solid var(--border-color);
+            color: #090909;
             padding: 2rem 0;
             text-align: center;
             font-size: 0.875rem;
         }
+    
+        * { box-sizing: border-box; }
+
+        body {
+            background-image:
+                radial-gradient(circle at 15% 10%, rgba(212,167,44,0.06), transparent 28%),
+                radial-gradient(circle at 85% 90%, rgba(212,167,44,0.05), transparent 28%);
+        }
+
+        header .container { gap: 1rem; }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            letter-spacing: 0.02em;
+        }
+
+        .logo img {
+            width: 54px;
+            height: 54px;
+            object-fit: contain;
+            border-radius: 50%;
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 16px rgba(212,167,44,0.25);
+            background: #000;
+        }
+
+        .hero {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1, .section-title {
+            text-shadow: 0 2px 18px rgba(212,167,44,0.16);
+        }
+
+        .cta-btn {
+            box-shadow: 0 6px 18px rgba(212,167,44,0.18);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 9px 24px rgba(212,167,44,0.28);
+        }
+
+        .card, .contact-info {
+            border: 1px solid var(--border-color);
+        }
+
+        .card-title { color: #F7E7B2; }
+        .card-text { color: var(--muted-text); }
+        .contact-item strong { color: var(--gold-light); }
+
+        .about {
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        a { color: var(--gold-light); }
+
     </style>
 </head>
 <body>
 
     <header>
         <div class="container">
-            <div class="logo">C'Betta</div>
+            <div class="logo"><img src="cbetta-logo.jpg" alt="Logo C'Betta"><span>C'Betta</span></div>
         </div>
     </header>
 
@@ -183,7 +253,7 @@
                 <!-- Produk 1 -->
                 <div class="card">
                     <!-- GANTI DI SINI: Masukkan nama file foto Anda di src="..." -->
-                    <img src="https://down-id.img.susercontent.com/file/126863492ab6b2639540cf51d235d301" alt="Pair FCCP Red Line Vietnam" class="card-img">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGTMJa_BcQFnM6GXNOahsEynTDY1_qpsoxsGB3l4F7tX1jC0P-t1WVEdE&s=10" alt="Pair FCCP Red Line Vietnam" class="card-img">
                     <div class="card-body">
                         <h3 class="card-title">Pair FCCP Red Line Vietnam</h3>
                         <div class="card-price">Rp 300.000</div>
