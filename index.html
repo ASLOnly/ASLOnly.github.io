@@ -3,317 +3,894 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/jpeg" href="image/cbetta-logo.jpg">
-    <title>C'Betta - Produk Berkualitas</title>
+
+    <title>C'Betta - Koleksi Ikan Cupang</title>
+
     <style>
         :root {
-            --primary-color: #D4A72C;
-            --primary-dark: #9A7112;
-            --gold-light: #F7D77A;
             --gold: #D4A72C;
+            --gold-light: #F7D77A;
             --gold-dark: #9A7112;
-            --text-color: #F5E6B8;
-            --muted-text: #C9B98A;
-            --bg-color: #080808;
-            --surface-color: #111111;
-            --border-color: rgba(212, 167, 44, 0.35);
-            
-            
+            --black: #080808;
+            --dark: #111111;
+            --dark-2: #181818;
+            --text: #f5f5f5;
+            --muted: #b8b8b8;
         }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.5;
+
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        header {
-            background: rgba(8, 8, 8, 0.96);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.45), inset 0 0 0 1px var(--border-color);
-            padding: 1rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 50;
+
+        html {
+            scroll-behavior: smooth;
         }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--gold-light);
-        }
-        .hero {
-            padding: 4rem 0;
-            text-align: center;
-            background: radial-gradient(circle at 50% 20%, rgba(212,167,44,0.16), transparent 42%), linear-gradient(135deg, #050505 0%, #17120A 55%, #050505 100%);
-        }
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--gold-light);
-        }
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--muted-text);
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        .cta-btn {
-            background-color: var(--gold-light);
-            color: #090909;
-            padding: 0.75rem 1.5rem;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            transition: background-color 0.2s;
-        }
-        .cta-btn:hover {
-            background: linear-gradient(135deg, #E7BF55, var(--gold-dark));
-        }
-        .products {
-            padding: 4rem 0;
-        }
-        .section-title {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 3rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-        .card {
-            background: linear-gradient(145deg, #151515, #0B0B0B);
-            border-radius: 0.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.45), inset 0 0 0 1px var(--border-color);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        /* UPDATE CSS: Pengaturan agar foto pas, rapi, dan tidak gepeng */
-        .card-img {
-            width: 100%;
-            height: 220px;       /* Tinggi area foto */
-            object-fit: cover;   /* Memotong gambar secara proporsional jika beda rasio */
-            object-position: center; /* Memastikan fokus gambar di tengah */
-            background-color: #0B0B0B;
-        }
-        
-        .card-body {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .card-title {
-            font-size: 1.25rem;
-            margin: 0 0 0.5rem 0;
-        }
-        .card-price {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--gold-light);
-            margin-bottom: 1rem;
-        }
-        .card-text {
-            color: var(--muted-text);
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
-            flex-grow: 1;
-        }
-        .about {
-            background-color: #090909;
-            padding: 4rem 0;
-        }
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .contact {
-            padding: 4rem 0;
-            background: radial-gradient(circle at 50% 0%, rgba(212,167,44,0.08), transparent 35%), #080808;
-        }
-        .contact-info {
-            max-width: 600px;
-            margin: 0 auto;
-            background: linear-gradient(145deg, #151515, #0B0B0B);
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 8px 28px rgba(0,0,0,0.45), inset 0 0 0 1px var(--border-color);
-        }
-        .contact-item {
-            margin-bottom: 1rem;
-        }
-        .contact-item strong {
-            display: inline-block;
-            width: 120px;
-        }
-        footer {
-            background: #050505; border-top: 1px solid var(--border-color);
-            color: #090909;
-            padding: 2rem 0;
-            text-align: center;
-            font-size: 0.875rem;
-        }
-    
-        * { box-sizing: border-box; }
 
         body {
-            background-image:
-                radial-gradient(circle at 15% 10%, rgba(212,167,44,0.06), transparent 28%),
-                radial-gradient(circle at 85% 90%, rgba(212,167,44,0.05), transparent 28%);
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--black);
+            color: var(--text);
+            line-height: 1.6;
         }
 
-        header .container { gap: 1rem; }
+        /* ================= HEADER ================= */
 
-        .logo {
-            display: inline-flex;
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.96);
+            border-bottom: 1px solid var(--gold-dark);
+            box-shadow: 0 3px 20px rgba(212, 167, 44, 0.12);
+        }
+
+        .navbar {
+            max-width: 1200px;
+            margin: auto;
+            padding: 14px 20px;
+            display: flex;
             align-items: center;
-            gap: 0.75rem;
-            letter-spacing: 0.02em;
+            justify-content: space-between;
+            gap: 20px;
         }
 
-        .logo img {
-            width: 54px;
-            height: 54px;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .brand img {
+            width: 52px;
+            height: 52px;
             object-fit: contain;
             border-radius: 50%;
-            border: 2px solid var(--gold);
-            box-shadow: 0 0 16px rgba(212,167,44,0.25);
-            background: #000;
+            border: 1px solid var(--gold);
         }
+
+        .brand-name {
+            color: var(--gold-light);
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 8px;
+        }
+
+        .nav-btn {
+            border: 1px solid transparent;
+            background: transparent;
+            color: #ddd;
+            padding: 9px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover,
+        .nav-btn.active {
+            color: var(--black);
+            background: var(--gold);
+            border-color: var(--gold-light);
+        }
+
+        /* ================= PAGE ================= */
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* ================= HERO ================= */
 
         .hero {
-            border-bottom: 1px solid var(--border-color);
+            min-height: 540px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 70px 20px;
+            background:
+                radial-gradient(circle at center,
+                rgba(212, 167, 44, 0.16),
+                transparent 45%),
+                linear-gradient(135deg, #050505, #17120a);
         }
 
-        .hero h1, .section-title {
-            text-shadow: 0 2px 18px rgba(212,167,44,0.16);
+        .hero-content {
+            max-width: 850px;
         }
 
-        .cta-btn {
-            box-shadow: 0 6px 18px rgba(212,167,44,0.18);
+        .hero h1 {
+            font-size: clamp(38px, 6vw, 68px);
+            color: var(--gold-light);
+            margin-bottom: 20px;
+            text-shadow: 0 0 25px rgba(212, 167, 44, 0.25);
         }
 
-        .cta-btn:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 9px 24px rgba(212,167,44,0.28);
+        .hero p {
+            color: var(--muted);
+            font-size: 18px;
+            max-width: 700px;
+            margin: auto;
         }
 
-        .card, .contact-info {
-            border: 1px solid var(--border-color);
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 28px;
+            background: linear-gradient(
+                135deg,
+                var(--gold-light),
+                var(--gold)
+            );
+            color: #111;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 7px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(212, 167, 44, 0.18);
         }
 
-        .card-title { color: #F7E7B2; }
-        .card-text { color: var(--muted-text); }
-        .contact-item strong { color: var(--gold-light); }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(212, 167, 44, 0.35);
+        }
+
+        /* ================= GENERAL ================= */
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--gold-light);
+            font-size: 34px;
+            margin-bottom: 45px;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 2px;
+            background: var(--gold);
+            margin: 12px auto 0;
+        }
+
+        /* ================= PRODUCTS ================= */
+
+        .products {
+            background: var(--dark);
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .product-card {
+            background: linear-gradient(145deg, #151515, #0d0d0d);
+            border: 1px solid #57430f;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold);
+            box-shadow: 0 10px 30px rgba(212, 167, 44, 0.14);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-info {
+            padding: 22px;
+        }
+
+        .product-info h3 {
+            color: var(--gold-light);
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: var(--gold);
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .product-info p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ================= ABOUT ================= */
 
         .about {
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
+            background: var(--black);
         }
 
-        a { color: var(--gold-light); }
+        .about-box {
+            max-width: 900px;
+            margin: auto;
+            background: var(--dark-2);
+            padding: 35px;
+            border: 1px solid #57430f;
+            border-radius: 12px;
+        }
 
+        .about-box p {
+            color: var(--muted);
+            margin-bottom: 15px;
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+            background: var(--dark);
+        }
+
+        .contact-box {
+            max-width: 800px;
+            margin: auto;
+            background: var(--dark-2);
+            border: 1px solid #57430f;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .contact-item {
+            padding: 13px 0;
+            border-bottom: 1px solid #292929;
+        }
+
+        .contact-item:last-child {
+            border-bottom: none;
+        }
+
+        .contact-item strong {
+            color: var(--gold-light);
+            display: inline-block;
+            min-width: 140px;
+        }
+
+        /* ================= TERMS ================= */
+
+        .terms {
+            background: var(--black);
+            min-height: 700px;
+        }
+
+        .terms-box {
+            max-width: 950px;
+            margin: auto;
+            background: var(--dark-2);
+            border: 1px solid #57430f;
+            border-radius: 12px;
+            padding: 40px;
+        }
+
+        .terms-box h2 {
+            color: var(--gold-light);
+            margin-top: 28px;
+            margin-bottom: 10px;
+        }
+
+        .terms-box h2:first-child {
+            margin-top: 0;
+        }
+
+        .terms-box p,
+        .terms-box li {
+            color: var(--muted);
+        }
+
+        .terms-box ul {
+            padding-left: 25px;
+        }
+
+        .back-btn {
+            display: block;
+            width: fit-content;
+            margin: 35px auto 0;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #050505;
+            border-top: 1px solid #3d300e;
+            padding: 25px 20px;
+            text-align: center;
+            color: #888;
+        }
+
+        footer span {
+            color: var(--gold);
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 850px) {
+            .product-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+            }
+
+            nav {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 480px;
+            }
+
+            .terms-box,
+            .about-box,
+            .contact-box {
+                padding: 25px 20px;
+            }
+
+            .contact-item strong {
+                display: block;
+                margin-bottom: 4px;
+            }
+        }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="container">
-            <div class="logo"><img src="cbetta-logo.jpg" alt="Logo C'Betta"><span>C'Betta</span></div>
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
+<header>
+    <div class="navbar">
+
+        <div class="brand" onclick="showPage('beranda')">
+
+            <!--
+                Jika file logo berada satu folder dengan index.html,
+                gunakan:
+                src="cbetta-logo.jpg"
+
+                Pada versi satu-file dengan logo Base64,
+                bagian src dapat diganti dengan data:image/jpeg;base64,...
+            -->
+
+            <img src="image/cbetta-logo.png" alt="Logo C'Betta">
+
+            <div class="brand-name">C'Betta</div>
         </div>
-    </header>
+
+        <nav>
+            <button
+                class="nav-btn active"
+                data-page="beranda"
+                onclick="showPage('beranda')">
+                Beranda
+            </button>
+
+            <button
+                class="nav-btn"
+                data-page="syarat-ketentuan"
+                onclick="showPage('syarat-ketentuan')">
+                Syarat & Ketentuan
+            </button>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =====================================================
+     HALAMAN 1 — BERANDA
+====================================================== -->
+
+<main id="beranda" class="page active">
 
     <section class="hero">
-        <div class="container">
-            <h1>Koleksi Produk Terbaik untuk Anda</h1>
-            <p>Temukan berbagai pilihan produk berkualitas tinggi yang dikurasi khusus untuk Anda.</p>
-            <a href="#produk" class="cta-btn">Lihat Produk</a>
+        <div class="hero-content">
+
+            <h1>C'Betta</h1>
+
+            <p>
+                Koleksi ikan cupang pilihan dengan kualitas terbaik
+                untuk penghobi maupun breeder.
+            </p>
+
+            <button
+                class="btn"
+                onclick="document.getElementById('produk').scrollIntoView()">
+                Lihat Produk
+            </button>
+
         </div>
     </section>
+
+
+    <!-- PRODUK -->
 
     <section id="produk" class="products">
+
         <div class="container">
-            <h2 class="section-title">Produk Kami</h2>
-            <div class="grid">
-                <!-- Produk 1 -->
-                <div class="card">
-                    <!-- GANTI DI SINI: Masukkan nama file foto Anda di src="..." -->
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGTMJa_BcQFnM6GXNOahsEynTDY1_qpsoxsGB3l4F7tX1jC0P-t1WVEdE&s=10" alt="Pair FCCP Red Line Vietnam" class="card-img">
-                    <div class="card-body">
-                        <h3 class="card-title">Pair FCCP Red Line Vietnam</h3>
-                        <div class="card-price">Rp 300.000</div>
-                        <p class="card-text">Paling populer dan best seller dengan kualitas super VVIP (Line original Vietnam) auto cuan di anakan nya.</p>
-                        <a href="#kontak" class="cta-btn" style="text-align: center;">Beli Sekarang</a>
+
+            <h2 class="section-title">
+                Produk Pilihan
+            </h2>
+
+            <div class="product-grid">
+
+                <!-- PRODUK 1 -->
+
+                <div class="product-card">
+
+                    <img
+                        class="product-image"
+                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGTMJa_BcQFnM6GXNOahsEynTDY1_qpsoxsGB3l4F7tX1jC0P-t1WVEdE&s=10"
+                        alt="Pair FCCP Red Line Vietnam">
+
+                    <div class="product-info">
+
+                        <h3>
+                            Pair FCCP Red Line Vietnam
+                        </h3>
+
+                        <div class="price">
+                            Rp 300.000
+                        </div>
+
+                        <p>
+                            Paling populer dan best seller dengan
+                            kualitas super VVIP (Line original Vietnam)
+                            auto cuan di anakan nya.
+                        </p>
+
                     </div>
                 </div>
-                <!-- Produk 2 -->
-                <div class="card">
-                    <!-- GANTI DI SINI: Masukkan nama file foto Anda di src="..." -->
-                    <img src="https://down-id.img.susercontent.com/file/sg-11134201-7rcbw-lsmx6ibcdqvpcf" alt="Pair Red Koi Cooper Line Indonesia" class="card-img">
-                    <div class="card-body">
-                        <h3 class="card-title">Pair Red Koi Cooper Line Indonesia</h3>
-                        <div class="card-price">Rp 200.000</div>
-                        <p class="card-text">Female full egg, Male sangat sobu (Line Indonesia) bukan random tapi ini settingan dengan kualitas grade A</p>
-                        <a href="#kontak" class="cta-btn" style="text-align: center;">Beli Sekarang</a>
+
+
+                <!-- PRODUK 2 -->
+
+                <div class="product-card">
+
+                    <img
+                        class="product-image"
+                        src="https://down-id.img.susercontent.com/file/sg-11134201-7rcbw-lsmx6ibcdqvpcf"
+                        alt="Pair Red Koi Cooper Line Indonesia">
+
+                    <div class="product-info">
+
+                        <h3>
+                            Pair Red Koi Cooper Line Indonesia
+                        </h3>
+
+                        <div class="price">
+                            Rp 200.000
+                        </div>
+
+                        <p>
+                            Female full egg, Male sangat sobu
+                            (Line Indonesia) bukan random tapi ini
+                            settingan dengan kualitas grade A.
+                        </p>
+
                     </div>
                 </div>
-                <!-- Produk 3 -->
-                <div class="card">
-                    <!-- GANTI DI SINI: Masukkan nama file foto Anda di src="..." -->
-                    <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/e64296dfffa94b2188d79030bc5a8bf6~tplv-aphluv4xwc-resize-jpeg:700:0.jpeg" alt="Pair Avatar Cooper Line Indonesia" class="card-img">
-                    <div class="card-body">
-                        <h3 class="card-title">Pair Avatar Cooper Line Indonesia</h3>
-                        <div class="card-price">Rp 200.000</div>
-                        <p class="card-text">Cocok dijadikan indukan, umur 5 bulan dengan size reguler (Line Indonesia) dengan kualitas grade A.</p>
-                        <a href="#kontak" class="cta-btn" style="text-align: center;">Beli Sekarang</a>
+
+
+                <!-- PRODUK 3 -->
+
+                <div class="product-card">
+
+                    <img
+                        class="product-image"
+                        src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/e64296dfffa94b2188d79030bc5a8bf6~tplv-aphluv4xwc-resize-jpeg:700:0.jpeg"
+                        alt="Pair Avatar Cooper Line Indonesia">
+
+                    <div class="product-info">
+
+                        <h3>
+                            Pair Avatar Cooper Line Indonesia
+                        </h3>
+
+                        <div class="price">
+                            Rp 200.000
+                        </div>
+
+                        <p>
+                            Cocok dijadikan indukan, umur 5 bulan
+                            dengan size reguler (Line Indonesia)
+                            dengan kualitas grade A.
+                        </p>
+
                     </div>
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+
+    <!-- TENTANG -->
 
     <section class="about">
+
         <div class="container">
-            <div class="about-content">
-                <h2 class="section-title">Tentang Kami</h2>
-                <p>Kami adalah toko online terpercaya yang berfokus pada penyediaan produk-produk berkualitas terbaik. Berawal dari penjualan via media sosial, kini kami hadir dengan platform yang lebih profesional untuk memberikan pengalaman belanja yang aman, cepat, dan terpercaya bagi seluruh pelanggan di Indonesia.</p>
+
+            <h2 class="section-title">
+                Tentang C'Betta
+            </h2>
+
+            <div class="about-box">
+
+                <p>
+                    C'Betta menyediakan berbagai pilihan ikan cupang
+                    berkualitas untuk penghobi dan breeder.
+                </p>
+
+                <p>
+                    Kami berusaha menyediakan koleksi dengan kualitas
+                    yang baik serta memberikan informasi produk yang
+                    jelas kepada pelanggan.
+                </p>
+
             </div>
+
         </div>
+
     </section>
 
-    <section id="kontak" class="contact">
+
+    <!-- KONTAK -->
+
+    <section class="contact">
+
         <div class="container">
-            <h2 class="section-title">Hubungi Kami</h2>
-            <div class="contact-info">
-                <div class="contact-item"><strong>Nama Toko:</strong> C'Betta</div>
-                <div class="contact-item"><strong>Email:</strong> admin@cbetta.my.id</div>
-                <div class="contact-item"><strong>WhatsApp:</strong> 0838-9013-6499</div>
-                <div class="contact-item"><strong>Alamat Toko:</strong> Jl. Oma Anggawisastra, Lampegan, Ibun, Kab. Bandung, Indonesia</div>
-                <div class="contact-item"><strong>Media Sosial:</strong> @c.betta.id (Instagram)</div>
+
+            <h2 class="section-title">
+                Hubungi Kami
+            </h2>
+
+            <div class="contact-box">
+
+                <div class="contact-item">
+                    <strong>Nama Toko</strong>
+                    C'Betta
+                </div>
+
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    admin@cbetta.my.id
+                </div>
+
+                <div class="contact-item">
+                    <strong>WhatsApp</strong>
+                    0838-9013-6499
+                </div>
+
+                <div class="contact-item">
+                    <strong>Alamat</strong>
+                    Jl. Oma Anggawisastra, Lampegan,
+                    Ibun, Kab. Bandung, Indonesia
+                </div>
+
+                <div class="contact-item">
+                    <strong>Instagram</strong>
+                    @c.betta.id
+                </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <footer>
+</main>
+
+
+<!-- =====================================================
+     HALAMAN 2 — SYARAT & KETENTUAN
+====================================================== -->
+
+<main id="syarat-ketentuan" class="page">
+
+    <section class="terms">
+
         <div class="container">
-            &copy; 2026 C'Betta. All Rights Reserved.
+
+            <h1 class="section-title">
+                Syarat & Ketentuan C'Betta
+            </h1>
+
+            <div class="terms-box">
+
+                <h2>1. Ketentuan Umum</h2>
+
+                <ul>
+                    <li>Layanan Bot ini ditujukan bagi pengguna yang berusia minimal 18 tahun.</li>
+                    <li>Anda wajib memberikan informasi yang akurat, benar, dan terbaru saat melakukan pendaftaran atau transaksi.</li>
+                </ul>
+
+
+                <h2>2. Aturan Penggunaan</h2>
+
+                <p>Anda setuju untuk tidak menggunakan layanan kami untuk:</p>
+                <ul>
+                    <li>Melakukan tindakan yang melanggar hukum yang berlaku di Indonesia.</li>
+                    <li>Meretas, merusak, atau mengganggu keamanan sistem kami.</li>
+                    <li>Menyebarkan informasi palsu, penipuan, atau konten yang merugikan pihak lain.</li>
+                </ul>
+
+
+                <h2>3. Kondisi Produk (Ikan Cupang)</h2>
+
+                <ul>
+                    <li><strong>Foto & Video:</strong> Foto atau video produk adalah kondisi asli ikan saat dilihat.</li>
+                    <li><strong>Mutasi Warna:</strong> Warna ikan cupang bisa sedikit berubah (mutasi) seiring waktu, faktor pakan, atau kondisi air selama perjalanan.</li>
+                </ul>
+
+
+                <h2>4. Pengiriman & Pengemasan</h2>
+
+                <ul>
+                    <li><strong>Keamanan Pengiriman:</strong> Ikan dikemas dengan standar aman menggunakan plastik ganda dan kardus tebal.</li>
+                    <li><strong>Jadwal Kirim:</strong> Pengiriman memerlukan waktu karantina ikan sebelum dikirim demi keselamatan ikan.</li>
+                </ul>
+
+
+                <h2>5. Garansi Ikan Hidup (D.O.A - Death on Arrival)</h2>
+
+                <p>Kami memberikan Garansi 100% Ikan Hidup sampai di tujuan dengan syarat:</p>
+                <ul>
+                    <li><strong>Video Unboxing:</strong> Anda wajib merekam video unboxing tanpa jeda/tanpa edit saat membuka paket.</li>
+                    <li><strong>Batas Waktu klaim:</strong> Klaim garansi maksimal 2 jam setelah paket dinyatakan diterima.</li>
+                </ul>
+
+
+                <h2>6. Hak Kekayaan Intelektual</h2>
+
+                <ul>
+                    <li>Seluruh konten pada layanan Bot ini adalah milik C'Betta yang dilindungi oleh hukum.</li>
+                </ul>
+
+
+                <h2>7. Transaksi & Pembayaran</h2>
+
+                <ul>
+                    <li>Pembayaran wajib dilakukan melalui metode resmi yang telah kami sediakan.</li>
+                </ul>
+
+
+                <h2>8. Batasan Tanggung Jawab</h2>
+
+                <ul>
+                    <li>Kami berupaya menyediakan layanan terbaik dan bebas gangguan. Namun, C'Betta tidak bertanggung jawab atas kerugian akibat gangguan teknis di luar kendali kami (seperti gangguan internet, server down, atau kesalahan pengguna).</li>
+                </ul>
+
+
+                <h2>9. Komplain</h2>
+
+                <ul>
+                    <li>Apabila terdapat permasalahan dengan pesanan, pelanggan dapat segera menghubungi C'Betta melalui kontak yang tersedia dengan menyertakan informasi pesanan dan bukti pendukung apabila diperlukan.</li>
+                </ul>
+
+
+                <h2>10. Perubahan Syarat & Ketentuan</h2>
+
+                <ul>
+                    <li>C'Betta dapat melakukan perubahan terhadap Syarat & Ketentuan apabila diperlukan. Versi terbaru yang ditampilkan pada website merupakan versi yang berlaku.</li>
+                </ul>
+
+
+                <h2>11. Persetujuan</h2>
+
+                <ul>
+                    <li>Dengan melakukan pemesanan, pelanggan menyatakan telah membaca dan memahami Syarat & Ketentuan C'Betta.</li>
+                </ul>
+
+
+                <button
+                    class="btn back-btn"
+                    onclick="showPage('beranda')">
+                    ← Kembali ke Beranda
+                </button>
+
+            </div>
+
         </div>
-    </footer>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+    &copy; 2026 <span>C'Betta</span>.
+    All Rights Reserved.
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+    function showPage(pageId) {
+
+        // Sembunyikan semua halaman
+        const pages = document.querySelectorAll('.page');
+
+        pages.forEach(function(page) {
+            page.classList.remove('active');
+        });
+
+
+        // Tampilkan halaman yang dipilih
+        const selectedPage = document.getElementById(pageId);
+
+        if (selectedPage) {
+            selectedPage.classList.add('active');
+        }
+
+
+        // Update tombol navigasi
+        const navButtons = document.querySelectorAll('.nav-btn');
+
+        navButtons.forEach(function(button) {
+
+            button.classList.remove('active');
+
+            if (button.dataset.page === pageId) {
+                button.classList.add('active');
+            }
+
+        });
+
+
+        // Ubah URL tanpa membuat file HTML baru
+        history.pushState(
+            null,
+            '',
+            '#' + pageId
+        );
+
+
+        // Kembali ke bagian paling atas
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
+
+    // Saat tombol Back / Forward browser digunakan
+    window.addEventListener('popstate', function() {
+
+        const pageId =
+            window.location.hash.replace('#', '') ||
+            'beranda';
+
+        showPageWithoutHistory(pageId);
+
+    });
+
+
+    // Saat halaman pertama kali dibuka
+    window.addEventListener('DOMContentLoaded', function() {
+
+        const pageId =
+            window.location.hash.replace('#', '') ||
+            'beranda';
+
+        showPageWithoutHistory(pageId);
+
+    });
+
+
+    function showPageWithoutHistory(pageId) {
+
+        const pages = document.querySelectorAll('.page');
+
+        pages.forEach(function(page) {
+            page.classList.remove('active');
+        });
+
+
+        const selectedPage =
+            document.getElementById(pageId);
+
+        if (selectedPage) {
+            selectedPage.classList.add('active');
+        } else {
+            document
+                .getElementById('beranda')
+                .classList.add('active');
+
+            pageId = 'beranda';
+        }
+
+
+        const navButtons =
+            document.querySelectorAll('.nav-btn');
+
+        navButtons.forEach(function(button) {
+
+            button.classList.remove('active');
+
+            if (button.dataset.page === pageId) {
+                button.classList.add('active');
+            }
+
+        });
+
+    }
+
+</script>
 
 </body>
 </html>
