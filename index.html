@@ -130,6 +130,14 @@
             max-width: 850px;
         }
 
+        .hero .btn {
+            margin-bottom: 10px;
+        }
+
+        .products .section-title {
+            margin-bottom: 35px;
+        }
+
         .hero h1 {
             font-size: clamp(38px, 6vw, 68px);
             color: var(--gold-light);
@@ -250,11 +258,31 @@
             font-size: 14px;
         }
 
-        /* ================= ABOUT ================= */
-
-        .about {
-            background: var(--black);
+        .buy-btn {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 11px 20px;
+            background: linear-gradient(
+                135deg,
+                var(--gold-light),
+                var(--gold)
+            );
+            color: #111;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 7px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 5px 20px rgba(212, 167, 44, 0.18);
         }
+
+        .buy-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(212, 167, 44, 0.35);
+        }
+
+        /* ================= ABOUT ================= */
 
         .about-box {
             max-width: 900px;
@@ -415,7 +443,7 @@
                 bagian src dapat diganti dengan data:image/jpeg;base64,...
             -->
 
-            <img src="image/cbetta-logo.png" alt="Logo C'Betta">
+            <img src="image/cbetta-logo.jpg" alt="Logo C'Betta">
 
             <div class="brand-name">C'Betta</div>
         </div>
@@ -427,6 +455,21 @@
                 onclick="showPage('beranda')">
                 Beranda
             </button>
+
+            <button
+                class="nav-btn"
+                data-page="tentang"
+                onclick="showPage('tentang')">
+                Tentang
+            </button>
+
+            <button
+                class="nav-btn"
+                data-page="kontak"
+                onclick="showPage('kontak')">
+                Kontak
+            </button>
+
 
             <button
                 class="nav-btn"
@@ -459,7 +502,7 @@
             <button
                 class="btn"
                 onclick="document.getElementById('produk').scrollIntoView()">
-                Lihat Produk
+                Lihat 3 Produk
             </button>
 
         </div>
@@ -493,6 +536,14 @@
                             Pair FCCP Red Line Vietnam
                         </h3>
 
+                        <a
+                            class="buy-btn"
+                            href="https://wa.me/6283890136499?text=Pair%20FCCP%20Red%20Line%20Vietnam%20-%20Saya%20ingin%20membeli%20produk%20ini."
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Beli Sekarang
+                        </a>
+
                         <div class="price">
                             Rp 300.000
                         </div>
@@ -521,6 +572,14 @@
                         <h3>
                             Pair Red Koi Cooper Line Indonesia
                         </h3>
+
+                        <a
+                            class="buy-btn"
+                            href="https://wa.me/6283890136499?text=Pair%20Red%20Koi%20Cooper%20Line%20Indonesia%20-%20Saya%20ingin%20membeli%20produk%20ini."
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Beli Sekarang
+                        </a>
 
                         <div class="price">
                             Rp 200.000
@@ -551,6 +610,14 @@
                             Pair Avatar Cooper Line Indonesia
                         </h3>
 
+                        <a
+                            class="buy-btn"
+                            href="https://wa.me/6283890136499?text=Pair%20Avatar%20Cooper%20Line%20Indonesia%20-%20Saya%20ingin%20membeli%20produk%20ini."
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            Beli Sekarang
+                        </a>
+
                         <div class="price">
                             Rp 200.000
                         </div>
@@ -569,24 +636,33 @@
         </div>
 
     </section>
+</main>
 
 
-    <!-- TENTANG -->
+<!-- =====================================================
+     HALAMAN 2 — TENTANG
+====================================================== -->
 
-    <section class="about">
+<main id="tentang" class="page">
+
+    <section class="terms">
 
         <div class="container">
 
-            <h2 class="section-title">
+            <h1 class="section-title">
                 Tentang C'Betta
-            </h2>
+            </h1>
 
-            <div class="about-box">
+            <div class="terms-box">
+
+                <h2>Tentang Kami</h2>
 
                 <p>
                     C'Betta menyediakan berbagai pilihan ikan cupang
                     berkualitas untuk penghobi dan breeder.
                 </p>
+
+                <h2>Kualitas Produk</h2>
 
                 <p>
                     Kami berusaha menyediakan koleksi dengan kualitas
@@ -594,24 +670,36 @@
                     jelas kepada pelanggan.
                 </p>
 
+                <button
+                    class="btn back-btn"
+                    onclick="showPage('beranda')">
+                    ← Kembali ke Beranda
+                </button>
+
             </div>
 
         </div>
 
     </section>
 
+</main>
 
-    <!-- KONTAK -->
 
-    <section class="contact">
+<!-- =====================================================
+     HALAMAN 3 — KONTAK
+====================================================== -->
+
+<main id="kontak" class="page">
+
+    <section class="terms">
 
         <div class="container">
 
-            <h2 class="section-title">
+            <h1 class="section-title">
                 Hubungi Kami
-            </h2>
+            </h1>
 
-            <div class="contact-box">
+            <div class="terms-box">
 
                 <div class="contact-item">
                     <strong>Nama Toko</strong>
@@ -639,6 +727,12 @@
                     @c.betta.id
                 </div>
 
+                <button
+                    class="btn back-btn"
+                    onclick="showPage('beranda')">
+                    ← Kembali ke Beranda
+                </button>
+
             </div>
 
         </div>
@@ -649,7 +743,7 @@
 
 
 <!-- =====================================================
-     HALAMAN 2 — SYARAT & KETENTUAN
+     HALAMAN 4 — SYARAT & KETENTUAN
 ====================================================== -->
 
 <main id="syarat-ketentuan" class="page">
@@ -667,7 +761,7 @@
                 <h2>1. Ketentuan Umum</h2>
 
                 <ul>
-                    <li>Layanan C'Betta ditujukan bagi pengguna yang berusia minimal 18 tahun.</li>
+                    <li>Layanan Bot ini ditujukan bagi pengguna yang berusia minimal 18 tahun.</li>
                     <li>Anda wajib memberikan informasi yang akurat, benar, dan terbaru saat melakukan pendaftaran atau transaksi.</li>
                 </ul>
 
