@@ -456,17 +456,14 @@
         }
     
 
-        /* C'Payment brand mark: retain C'Payment identity */
-        .brand-mark {
+        /* Logo C'Payment dari folder image */
+        .brand img {
             width: 52px;
             height: 52px;
-            display: grid;
-            place-items: center;
+            object-fit: contain;
             border-radius: 50%;
             border: 1px solid var(--gold);
-            color: var(--gold-light);
-            font-size: 18px;
-            font-weight: bold;
+            flex-shrink: 0;
         }
 </style>
 </head>
@@ -482,16 +479,12 @@
 
         <div class="brand" onclick="showPage('beranda')">
 
-            <!--
-                Jika file logo berada satu folder dengan index.html,
-                gunakan:
-                src="cbetta-logo.png"
-
-                Pada versi satu-file dengan logo Base64,
-                bagian src dapat diganti dengan data:image/jpeg;base64,...
-            -->
-
-            <div class="brand-mark" aria-hidden="true">CP</div>
+            <img
+                src="image/cpayment-logo.png"
+                alt="Logo C'Payment"
+                width="52"
+                height="52"
+            />
 
             <div class="brand-name">
                 <div>C'Payment</div>
