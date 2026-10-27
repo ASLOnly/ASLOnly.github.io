@@ -8,6 +8,7 @@
     <meta name="description" content="Pilihan pakan, produk perawatan, dan perlengkapan pendukung untuk kebutuhan ikan cupang Anda.">
 
     <style>
+
         :root {
             --gold: #D4A72C;
             --gold-light: #F7D77A;
@@ -64,16 +65,12 @@
             cursor: pointer;
         }
 
-        .brand-mark {
+        .brand img {
             width: 52px;
             height: 52px;
-            display: grid;
-            place-items: center;
+            object-fit: contain;
             border-radius: 50%;
             border: 1px solid var(--gold);
-            color: var(--gold-light);
-            font-size: 18px;
-            font-weight: bold;
         }
 
         .brand-name {
@@ -433,7 +430,21 @@
                 margin-bottom: 4px;
             }
         }
-    </style>
+    
+
+        /* C'Payment brand mark: retain C'Payment identity */
+        .brand-mark {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            color: var(--gold-light);
+            font-size: 18px;
+            font-weight: bold;
+        }
+</style>
 </head>
 
 <body>
