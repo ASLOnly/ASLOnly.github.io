@@ -2,43 +2,86 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>C'Payment | Perlengkapan Ikan Cupang</title>
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C'Payment - Perlengkapan Ikan Cupang</title>
+<meta name="description" content="Pilihan pakan, produk perawatan, dan perlengkapan pendukung untuk kebutuhan ikan cupang Anda.">
 <style>
-:root{color-scheme:dark;--gold:#fbbf24;--gold-soft:#fcd34d;--black:#09090b}
-::selection{background:var(--gold);color:var(--black)}
-:focus-visible{outline:2px solid var(--gold-soft);outline-offset:3px}
-@keyframes slideIn{from{transform:translateX(100%)}to{transform:translateX(0)}}
-.animate-slide-in{animation:slideIn .3s ease-out forwards}
+:root{--gold:#D4A72C;--gold-light:#F7D77A;--gold-dark:#9A7112;--black:#080808;--dark:#111111;--dark-2:#181818;--text:#f5f5f5;--muted:#b8b8b8}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;background:var(--black);color:var(--text);line-height:1.6}
+header{position:sticky;top:0;z-index:1000;background:rgba(8,8,8,.96);border-bottom:1px solid var(--gold-dark);box-shadow:0 3px 20px rgba(212,167,44,.12)}
+.navbar{max-width:1200px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;cursor:pointer}.brand-mark{width:52px;height:52px;display:grid;place-items:center;border-radius:50%;border:1px solid var(--gold);color:var(--gold-light);font-size:18px;font-weight:bold}
+.brand-name{color:var(--gold-light);font-size:24px;font-weight:bold}.brand-slogan{color:var(--muted);font-size:11px;font-weight:normal;line-height:1.3;margin-top:2px}
+nav{display:flex;gap:8px;flex-wrap:wrap}.nav-btn{border:1px solid transparent;background:transparent;color:#ddd;padding:9px 15px;border-radius:6px;cursor:pointer;font-size:15px;transition:.3s;font-family:inherit}
+.nav-btn:hover,.nav-btn.active{color:var(--black);background:var(--gold);border-color:var(--gold-light)}
+.page{display:none}.page.active{display:block}
+.hero{min-height:540px;display:flex;align-items:center;justify-content:center;text-align:center;padding:70px 20px;background:radial-gradient(circle at center,rgba(212,167,44,.16),transparent 45%),linear-gradient(135deg,#050505,#17120a)}
+.hero-content{max-width:850px}.hero .btn{margin-bottom:10px}.products .section-title{margin-bottom:35px}
+.hero h1{font-size:clamp(38px,6vw,68px);color:var(--gold-light);margin-bottom:20px;text-shadow:0 0 25px rgba(212,167,44,.25)}
+.hero p{color:var(--muted);font-size:18px;max-width:700px;margin:auto}
+.btn{display:inline-block;margin-top:30px;padding:13px 28px;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#111;font-weight:bold;text-decoration:none;border-radius:7px;border:none;cursor:pointer;transition:.3s;box-shadow:0 5px 20px rgba(212,167,44,.18);font-family:inherit;font-size:15px}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(212,167,44,.35)}
+.container{width:92%;max-width:1200px;margin:auto}section{padding:70px 0}.section-title{text-align:center;color:var(--gold-light);font-size:34px;margin-bottom:45px}
+.section-title:after{content:"";display:block;width:70px;height:2px;background:var(--gold);margin:12px auto 0}
+.products{background:var(--dark)}.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.product-card{background:linear-gradient(145deg,#151515,#0d0d0d);border:1px solid #57430f;border-radius:12px;overflow:hidden;transition:.3s}
+.product-card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 10px 30px rgba(212,167,44,.14)}
+.product-image{width:100%;height:260px;object-fit:cover;display:block;background:var(--dark-2)}.product-info{padding:22px}
+.product-info h3{color:var(--gold-light);margin-bottom:10px}.price{color:var(--gold);font-size:22px;font-weight:bold;margin:12px 0}.product-info p{color:var(--muted);font-size:14px}
+.buy-btn{display:inline-block;margin-top:18px;padding:11px 20px;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#111;font-weight:bold;text-decoration:none;border-radius:7px;border:none;cursor:pointer;transition:.3s;box-shadow:0 5px 20px rgba(212,167,44,.18)}
+.buy-btn:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(212,167,44,.35)}
+.about-box{max-width:900px;margin:auto;background:var(--dark-2);padding:35px;border:1px solid #57430f;border-radius:12px}.about-box p{color:var(--muted);margin-bottom:15px}
+.contact{background:var(--dark)}.contact-box{max-width:800px;margin:auto;background:var(--dark-2);border:1px solid #57430f;border-radius:12px;padding:30px}
+.contact-item{padding:13px 0;border-bottom:1px solid #292929;color:var(--muted)}.contact-item:last-child{border-bottom:none}.contact-item strong{color:var(--gold-light);display:inline-block;min-width:140px}
+.terms{background:var(--black);min-height:700px}.terms-box{max-width:950px;margin:auto;background:var(--dark-2);border:1px solid #57430f;border-radius:12px;padding:40px}
+.terms-box h2{color:var(--gold-light);margin-top:28px;margin-bottom:10px}.terms-box h2:first-child{margin-top:0}.terms-box p,.terms-box li{color:var(--muted)}.terms-box ul{padding-left:25px}
+.back-btn{display:block;width:fit-content;margin:35px auto 0}footer{background:#050505;border-top:1px solid #3d300e;padding:25px 20px;text-align:center;color:#888}footer span{color:var(--gold)}
+:focus-visible{outline:2px solid var(--gold-light);outline-offset:3px}
+@media(max-width:850px){.product-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.navbar{flex-direction:column}nav{width:100%;justify-content:center}.nav-btn{padding:8px 10px;font-size:13px}.product-grid{grid-template-columns:1fr}.hero{min-height:480px}.terms-box,.about-box,.contact-box{padding:25px 20px}.contact-item strong{display:block;margin-bottom:4px}}
 </style>
 </head>
-<body class="bg-zinc-950 text-zinc-100 font-sans">
-<header class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-40">
-<div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center gap-4">
-<a href="#" class="text-2xl font-bold text-amber-400 tracking-wide">C'Payment</a>
-<nav class="hidden md:flex gap-6 text-sm"><a href="#katalog" class="text-zinc-300 hover:text-amber-400">Produk</a><a href="https://aslonly.github.io" target="_blank" rel="noopener noreferrer" class="text-amber-400 hover:text-amber-300">🐟 C'Betta ↗</a><a href="#syarat-ketentuan" class="text-zinc-300 hover:text-amber-400">Informasi</a></nav>
-<button onclick="toggleKeranjang()" class="bg-amber-400 text-zinc-950 px-4 py-2 rounded-lg font-semibold hover:bg-amber-300">🛒 Keranjang <span id="cart-count" class="ml-1 bg-zinc-950 text-amber-300 px-2 rounded-full">0</span></button>
-</div></header>
-<section class="bg-gradient-to-r from-zinc-900 via-zinc-950 to-zinc-900 py-16 px-4 text-center border-b border-zinc-800">
-<div class="max-w-3xl mx-auto"><p class="text-xs uppercase tracking-[.25em] text-amber-400 mb-4">C'Payment · C'Betta Group</p><h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Perlengkapan Perawatan Ikan Cupang</h1><p class="text-lg text-zinc-400 mb-8">Pilihan pakan, produk perawatan, dan perlengkapan pendukung untuk kebutuhan ikan cupang Anda.</p><a href="#katalog" class="inline-block bg-amber-400 text-zinc-950 font-semibold px-6 py-3 rounded-full hover:bg-amber-300">Lihat Katalog Produk</a></div>
-</section>
-<main id="katalog" class="max-w-6xl mx-auto px-4 py-12"><h2 class="text-2xl font-bold mb-8 border-b-2 border-amber-400 pb-2 inline-block">Produk Pilihan Kami</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-<article class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 flex flex-col justify-between hover:border-amber-500/50"><div class="p-6"><div class="h-48 rounded-lg mb-4 flex items-center justify-center bg-zinc-800 border border-zinc-700"><img src="obat.png" alt="Obat perawatan cupang" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/18181b/fbbf24?text=Obat+Cupang'"></div><h3 class="text-xl font-bold mb-2">Obat Perawatan Khusus Cupang 60ml</h3><p class="text-zinc-400 text-sm">Produk perawatan ikan cupang. Periksa label, komposisi, peringatan, dan petunjuk penggunaan sebelum digunakan.</p></div><div class="p-6 pt-0 border-t border-zinc-800 flex justify-between items-center gap-3"><span class="text-lg font-extrabold text-amber-400">Rp 35.000</span><button onclick="tambah(1,'Obat Perawatan Cupang',35000)" class="bg-amber-400 text-zinc-950 px-4 py-2 rounded-md text-sm font-semibold hover:bg-amber-300">+ Keranjang</button></div></article>
-<article class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 flex flex-col justify-between hover:border-amber-500/50"><div class="p-6"><div class="h-48 rounded-lg mb-4 flex items-center justify-center bg-zinc-800 border border-zinc-700"><img src="pakan.png" alt="Pakan pelet premium" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/18181b/fbbf24?text=Pakan+Pelet'"></div><h3 class="text-xl font-bold mb-2">Pakan Pelet Premium High-Protein</h3><p class="text-zinc-400 text-sm">Pakan pelet untuk kebutuhan pakan ikan cupang. Berikan sesuai petunjuk pada kemasan dan kebutuhan ikan.</p></div><div class="p-6 pt-0 border-t border-zinc-800 flex justify-between items-center gap-3"><span class="text-lg font-extrabold text-amber-400">Rp 45.000</span><button onclick="tambah(2,'Pakan Pelet Premium',45000)" class="bg-amber-400 text-zinc-950 px-4 py-2 rounded-md text-sm font-semibold hover:bg-amber-300">+ Keranjang</button></div></article>
-<article class="bg-zinc-900 rounded-xl overflow-hidden border border-zinc-800 flex flex-col justify-between hover:border-amber-500/50"><div class="p-6"><div class="h-48 rounded-lg mb-4 flex items-center justify-center bg-zinc-800 border border-zinc-700"><img src="ketapang.png" alt="Ekstrak daun ketapang" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x300/18181b/fbbf24?text=Ekstrak+Ketapang'"></div><h3 class="text-xl font-bold mb-2">Ekstrak Daun Ketapang Olahan 250ml</h3><p class="text-zinc-400 text-sm">Produk olahan daun ketapang untuk perawatan air. Ikuti takaran dan petunjuk penggunaan pada label produk.</p></div><div class="p-6 pt-0 border-t border-zinc-800 flex justify-between items-center gap-3"><span class="text-lg font-extrabold text-amber-400">Rp 20.000</span><button onclick="tambah(3,'Ekstrak Daun Ketapang',20000)" class="bg-amber-400 text-zinc-950 px-4 py-2 rounded-md text-sm font-semibold hover:bg-amber-300">+ Keranjang</button></div></article>
-</div></main>
-<div id="cart-sidebar" class="fixed inset-0 bg-black/70 z-50 hidden justify-end"><section class="bg-zinc-900 w-full max-w-md h-full p-6 overflow-y-auto flex flex-col shadow-2xl border-l border-zinc-800 animate-slide-in"><div class="flex justify-between items-center border-b border-zinc-800 pb-4 mb-6"><h2 class="text-xl font-bold">Keranjang Belanja</h2><button onclick="toggleKeranjang()" aria-label="Tutup keranjang" class="text-zinc-400 hover:text-white text-2xl">&times;</button></div><div id="cart-items" class="space-y-4 mb-6"></div><div class="mt-auto border-t border-zinc-800 pt-4"><p class="flex justify-between font-bold text-lg mb-4"><span>Total</span><span id="cart-total" class="text-amber-400">Rp 0</span></p><form id="checkout-form" class="space-y-3 mb-4"><input id="nama" required placeholder="Nama lengkap penerima" class="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md"><input id="email" type="email" required placeholder="Alamat email aktif" class="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md"><input id="telepon" type="tel" required placeholder="Nomor WhatsApp" class="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md"><textarea id="alamat" required placeholder="Alamat pengiriman lengkap" class="w-full p-2 bg-zinc-800 border border-zinc-700 rounded-md"></textarea></form><button onclick="checkout()" class="w-full bg-amber-400 text-zinc-950 py-3 rounded-lg font-bold hover:bg-amber-300">Lanjutkan Pemesanan</button></div></section></div>
-<footer id="syarat-ketentuan" class="bg-zinc-900 text-zinc-400 py-12 px-4 mt-20 border-t border-zinc-800"><div class="max-w-4xl mx-auto text-sm space-y-6"><h2 class="text-zinc-100 text-lg font-bold text-center border-b border-zinc-800 pb-4">Informasi dan Kebijakan C'Payment</h2><div class="grid md:grid-cols-2 gap-6"><section><h3 class="text-zinc-200 font-semibold mb-2">Pemrosesan dan Pengiriman</h3><p class="text-xs leading-relaxed">Pesanan diproses setelah detail pesanan dan pembayaran dikonfirmasi. Pilihan jasa pengiriman, biaya, dan estimasi waktu diinformasikan sebelum pengiriman.</p></section><section><h3 class="text-zinc-200 font-semibold mb-2">Pengembalian dan Penukaran</h3><p class="text-xs leading-relaxed">Jika barang rusak, salah, kurang, atau tidak sesuai pesanan, hubungi layanan pelanggan dengan nomor pesanan dan bukti kondisi barang untuk ditinjau.</p></section></div><section class="border-t border-zinc-800 pt-6"><h3 class="text-zinc-200 font-semibold mb-2">Privasi Data Pelanggan</h3><p class="text-xs leading-relaxed">Formulir pada halaman ini tidak mengirim atau menyimpan data pemesanan. Jangan mengandalkan formulir ini untuk mengirim informasi pribadi. Pemesanan online belum terhubung ke sistem transaksi.</p></section><div class="border-t border-zinc-800 pt-6 text-center text-xs space-y-2"><p><strong class="text-zinc-300">Layanan Pelanggan C'Payment:</strong> WhatsApp: 0822-2937-7746 | Email: admin@cbetta.my.id</p><p><strong class="text-zinc-300">Alamat Usaha:</strong> Jl. Oma Anggawisastra, Lampegan, Ibun, Kab. Bandung, Indonesia</p></div><p class="text-center pt-4 text-xs text-zinc-600">&copy; 2026 C'Payment.</p></div></footer>
+<body>
+<header><div class="navbar">
+<div class="brand" onclick="showPage('beranda')" role="button" tabindex="0" aria-label="Kembali ke beranda C'Payment"><div class="brand-mark" aria-hidden="true">CP</div><div class="brand-name"><div>C'Payment</div><div class="brand-slogan">Perlengkapan dan Perawatan Ikan Cupang</div></div></div>
+<nav aria-label="Navigasi utama">
+<button class="nav-btn active" data-page="beranda" onclick="showPage('beranda')">Beranda</button>
+<button class="nav-btn" data-page="tentang" onclick="showPage('tentang')">Tentang</button>
+<button class="nav-btn" data-page="kontak" onclick="showPage('kontak')">Kontak</button>
+<button class="nav-btn" data-page="syarat-ketentuan" onclick="showPage('syarat-ketentuan')">Syarat &amp; Ketentuan</button>
+</nav></div></header>
+<main id="beranda" class="page active">
+<section class="hero"><div class="hero-content"><h1>C'Payment</h1><p>Pilihan pakan, produk perawatan, dan perlengkapan pendukung untuk kebutuhan ikan cupang Anda.</p><button class="btn" onclick="document.getElementById('produk').scrollIntoView({behavior:'smooth'})">Lihat 3 Produk</button></div></section>
+<section id="produk" class="products"><div class="container"><h2 class="section-title">Produk Pilihan</h2><div class="product-grid">
+<article class="product-card"><img class="product-image" src="obat.png" alt="Obat perawatan cupang" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111111/F7D77A?text=Obat+Cupang'"><div class="product-info"><h3>Obat Perawatan Khusus Cupang 60ml</h3><div class="price">Rp 35.000</div><p>Produk perawatan ikan cupang. Periksa label, komposisi, peringatan, dan petunjuk penggunaan sebelum digunakan.</p><a class="buy-btn" href="#kontak" onclick="showPage('kontak')">Tanyakan Produk</a></div></article>
+<article class="product-card"><img class="product-image" src="pakan.png" alt="Pakan pelet premium" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111111/F7D77A?text=Pakan+Pelet'"><div class="product-info"><h3>Pakan Pelet Premium High-Protein</h3><div class="price">Rp 45.000</div><p>Pakan pelet untuk kebutuhan pakan ikan cupang. Berikan sesuai petunjuk pada kemasan dan kebutuhan ikan.</p><a class="buy-btn" href="#kontak" onclick="showPage('kontak')">Tanyakan Produk</a></div></article>
+<article class="product-card"><img class="product-image" src="ketapang.png" alt="Ekstrak daun ketapang" onerror="this.onerror=null;this.src='https://placehold.co/600x400/111111/F7D77A?text=Ekstrak+Ketapang'"><div class="product-info"><h3>Ekstrak Daun Ketapang Olahan 250ml</h3><div class="price">Rp 20.000</div><p>Produk olahan daun ketapang untuk perawatan air. Ikuti takaran dan petunjuk penggunaan pada label produk.</p><a class="buy-btn" href="#kontak" onclick="showPage('kontak')">Tanyakan Produk</a></div></article>
+</div></div></section></main>
+<main id="tentang" class="page"><section class="terms"><div class="container"><h1 class="section-title">Tentang C'Payment</h1><div class="about-box">
+<h2>Tentang Kami</h2><p>C'Payment menyediakan pilihan perlengkapan dan produk pendukung perawatan ikan cupang.</p>
+<h2>Keterangan Produk</h2><p>Informasi produk ditampilkan untuk membantu pelanggan memahami jenis dan harga barang. Periksa label dan petunjuk pemakaian untuk produk yang memerlukannya.</p>
+<h2>Pemesanan</h2><p>Untuk menanyakan ketersediaan produk dan cara pemesanan, silakan hubungi kami melalui informasi kontak yang tersedia. Website ini belum menyediakan checkout atau pemrosesan pesanan online.</p>
+<button class="btn back-btn" onclick="showPage('beranda')">← Kembali ke Beranda</button></div></div></section></main>
+<main id="kontak" class="page"><section class="terms"><div class="container"><h1 class="section-title">Hubungi Kami</h1><div class="contact-box">
+<div class="contact-item"><strong>Nama Toko</strong>C'Payment</div>
+<div class="contact-item"><strong>Email</strong><a href="mailto:admin@cbetta.my.id" style="color:var(--gold-light)">admin@cbetta.my.id</a></div>
+<div class="contact-item"><strong>WhatsApp</strong><a href="https://wa.me/6282229377746" style="color:var(--gold-light)">0822-2937-7746</a></div>
+<div class="contact-item"><strong>Alamat</strong>Jl. Oma Anggawisastra, Lampegan, Ibun, Kab. Bandung, Indonesia</div>
+<button class="btn back-btn" onclick="showPage('beranda')">← Kembali ke Beranda</button></div></div></section></main>
+<main id="syarat-ketentuan" class="page"><section class="terms"><div class="container"><h1 class="section-title">Syarat &amp; Ketentuan C'Payment</h1><div class="terms-box">
+<h2>1. Informasi Produk</h2><p>Deskripsi dan harga ditampilkan sebagai informasi produk. Ketersediaan dapat dikonfirmasi melalui layanan pelanggan sebelum melakukan pemesanan.</p>
+<h2>2. Penggunaan Produk</h2><ul><li>Baca label, komposisi, peringatan, dan petunjuk penggunaan pada setiap produk.</li><li>Gunakan produk sesuai petunjuk pada kemasan dan kebutuhan ikan.</li></ul>
+<h2>3. Pemesanan dan Pembayaran</h2><p>Website ini belum menyediakan keranjang, checkout, atau pemrosesan pembayaran online. Hubungi layanan pelanggan untuk menanyakan proses pemesanan. Jangan menganggap pesanan telah dibuat hanya dengan melihat katalog website.</p>
+<h2>4. Pengiriman dan Pengembalian</h2><p>Informasi mengenai pilihan pengiriman, biaya, estimasi waktu, serta penanganan barang rusak atau tidak sesuai perlu dikonfirmasi kepada layanan pelanggan sebelum transaksi.</p>
+<h2>5. Privasi</h2><p>Website ini tidak menyediakan formulir pemesanan dan tidak mengumpulkan data pesanan melalui fitur checkout. Jika menghubungi kami melalui saluran lain, bagikan hanya informasi yang diperlukan untuk pertanyaan Anda.</p>
+<h2>6. Perubahan Informasi</h2><p>Informasi produk dan ketentuan dapat diperbarui. Silakan periksa informasi terbaru atau konfirmasi langsung kepada layanan pelanggan.</p>
+<button class="btn back-btn" onclick="showPage('beranda')">← Kembali ke Beranda</button></div></div></section></main>
+<footer>&copy; 2026 <span>C'Payment</span>. All Rights Reserved.</footer>
 <script>
-let cart=[];
-const money=n=>'Rp '+n.toLocaleString('id-ID');
-function toggleKeranjang(){const s=document.getElementById('cart-sidebar');s.classList.toggle('hidden');s.classList.toggle('flex');}
-function tambah(id,nama,harga){const item=cart.find(x=>x.id===id);if(item)item.qty++;else cart.push({id,nama,harga,qty:1});renderCart();document.getElementById('cart-sidebar').classList.remove('hidden');document.getElementById('cart-sidebar').classList.add('flex');}
-function hapus(id){cart=cart.filter(x=>x.id!==id);renderCart();}
-function renderCart(){document.getElementById('cart-count').textContent=cart.reduce((n,x)=>n+x.qty,0);document.getElementById('cart-items').innerHTML=cart.length?cart.map(x=>'<div class="flex justify-between gap-3 border-b border-zinc-800 pb-3"><div><p class="font-semibold">'+x.nama+'</p><p class="text-xs text-zinc-400">'+money(x.harga)+' × '+x.qty+'</p></div><div class="text-right"><p>'+money(x.harga*x.qty)+'</p><button onclick="hapus('+x.id+')" class="text-amber-400 text-xs">Hapus</button></div></div>').join(''):'<p class="text-zinc-500 text-center py-8">Keranjang belanja masih kosong.</p>';document.getElementById('cart-total').textContent=money(cart.reduce((n,x)=>n+x.harga*x.qty,0));}
-function checkout(){if(!cart.length){alert('Keranjang belanja masih kosong.');return;}if(!document.getElementById('checkout-form').reportValidity())return;alert('Pemesanan online belum tersedia. Data formulir belum dikirim dan tidak ada pembayaran yang diproses. Silakan hubungi layanan pelanggan: WhatsApp 0822-2937-7746 | Email admin@cbetta.my.id');}
-renderCart();
+function showPage(pageId){document.querySelectorAll('.page').forEach(page=>page.classList.remove('active'));const selectedPage=document.getElementById(pageId);if(selectedPage)selectedPage.classList.add('active');document.querySelectorAll('.nav-btn').forEach(button=>{button.classList.remove('active');if(button.dataset.page===pageId)button.classList.add('active')});history.pushState(null,'','#'+pageId);window.scrollTo({top:0,behavior:'smooth'})}
+function showPageWithoutHistory(pageId){document.querySelectorAll('.page').forEach(page=>page.classList.remove('active'));const selectedPage=document.getElementById(pageId);if(selectedPage)selectedPage.classList.add('active');else{document.getElementById('beranda').classList.add('active');pageId='beranda'}document.querySelectorAll('.nav-btn').forEach(button=>{button.classList.remove('active');if(button.dataset.page===pageId)button.classList.add('active')})}
+window.addEventListener('popstate',()=>showPageWithoutHistory(window.location.hash.replace('#','')||'beranda'));
+window.addEventListener('DOMContentLoaded',()=>showPageWithoutHistory(window.location.hash.replace('#','')||'beranda'));
+document.querySelector('.brand').addEventListener('keydown',event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();showPage('beranda')}});
 </script>
 </body></html>
